@@ -322,6 +322,33 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Scroll Section Tracker using Intersection Observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -40% 0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   // Download Resume Function
   const handleDownloadResume = () => {
     const resumeText = `====================================================
@@ -416,6 +443,10 @@ Academic Performance: CGPA ${ed.cgpa}
           href: `#${link.id}`
         }))}
         activeHref={`#${activeSection}`}
+        onItemClick={(href) => {
+          const id = href.replace('#', '');
+          setActiveSection(id);
+        }}
         particleCount={15}
         particleDistances={[90, 10]}
         particleR={100}
