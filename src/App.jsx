@@ -583,7 +583,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </div>
 
                     {/* Code Snippet Styled Profile Details */}
-                    <div className="font-mono text-xs sm:text-sm space-y-2 text-slate-300">
+                    <div className="font-mono text-xs sm:text-sm space-y-2 text-slate-300 overflow-x-auto pb-2 scrollbar-thin">
                       <p><span className="text-purple-400">const</span> <span className="text-yellow-300">developer</span> = &#123;</p>
                       <p className="pl-4"><span className="text-cyan-400">name</span>: <span className="text-emerald-300">"{RESUME_DATA.name}"</span>,</p>
                       <p className="pl-4"><span className="text-cyan-400">degree</span>: <span className="text-emerald-300">"B.Tech AI & DS"</span>,</p>
