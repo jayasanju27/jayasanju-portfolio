@@ -1,29 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Download, 
-  ExternalLink, 
-  Code, 
-  Database, 
-  Terminal, 
-  Cpu, 
-  Briefcase, 
-  GraduationCap, 
-  User, 
-  Send, 
-  Sparkles, 
-  ChevronRight, 
-  Menu, 
-  X, 
-  CheckCircle2, 
-  Award, 
-  Globe, 
-  Layers, 
-  Copy, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Download,
+  ExternalLink,
+  Code,
+  Database,
+  Terminal,
+  Cpu,
+  Briefcase,
+  GraduationCap,
+  User,
+  Send,
+  Sparkles,
+  ChevronRight,
+  Menu,
+  X,
+  CheckCircle2,
+  Award,
+  Globe,
+  Layers,
+  Copy,
   Smartphone,
   Eye
 } from 'lucide-react';
@@ -38,7 +38,7 @@ const RESUME_DATA = {
   github: "https://github.com/jayasanju27",
   linkedin: "https://www.linkedin.com/in/jaya-sanju-1237b632b",
   summary: "B.Tech student specializing in Artificial Intelligence and Data Science with hands-on project experience in web development and responsive website engineering. Eager to contribute to real-world solutions through technical skills and practical projects.",
-  
+
   skills: [
     { category: "Languages & Core Skills", items: ["Python", "Java", "HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS"] },
     { category: "Databases", items: ["Supabase", "PostgreSQL"] },
@@ -46,7 +46,7 @@ const RESUME_DATA = {
     { category: "Deployment", items: ["Vercel"] },
     { category: "Languages Known", items: ["English (Fluent)", "Tamil (Native)"] }
   ],
-  
+
   experience: [
     {
       role: "Web Development & Responsive Website Intern",
@@ -60,7 +60,7 @@ const RESUME_DATA = {
       ]
     }
   ],
-  
+
   projects: [
     {
       title: "Smartphone E-Commerce Platform",
@@ -80,7 +80,7 @@ const RESUME_DATA = {
       liveUrl: "https://smartstore-app-kappa.vercel.app/"
     }
   ],
-  
+
   education: [
     {
       degree: "B.Tech in Artificial Intelligence and Data Science",
@@ -257,9 +257,9 @@ const ThreeDCanvas = () => {
   }, []);
 
   return (
-    <div 
-      ref={mountRef} 
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden" 
+    <div
+      ref={mountRef}
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     />
   );
@@ -401,10 +401,10 @@ Academic Performance: CGPA ${ed.cgpa}
       {/* Navigation Bar */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          
+
           {/* Logo */}
-          <a 
-            href="#hero" 
+          <a
+            href="#hero"
             className="flex items-center gap-2 group cursor-pointer"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
@@ -427,11 +427,10 @@ Academic Performance: CGPA ${ed.cgpa}
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setActiveSection(link.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
-                  activeSection === link.id
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${activeSection === link.id
                     ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md shadow-cyan-500/25'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -476,11 +475,10 @@ Academic Performance: CGPA ${ed.cgpa}
                   setActiveSection(link.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`block px-4 py-3 rounded-xl text-sm font-medium ${
-                  activeSection === link.id
+                className={`block px-4 py-3 rounded-xl text-sm font-medium ${activeSection === link.id
                     ? 'bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 text-cyan-400 border border-cyan-500/30'
                     : 'text-slate-300 hover:bg-slate-900'
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -512,7 +510,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* HERO SECTION */}
         <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column - Hero Content */}
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wide">
@@ -586,13 +584,13 @@ Academic Performance: CGPA ${ed.cgpa}
             {/* Right Column - Interactive Futuristic 3D Developer Card */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group w-full max-w-md">
-                
+
                 {/* Glowing Backlight */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
                 {/* Main Glassmorphic Interactive Card */}
                 <div className="relative bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl space-y-6">
-                  
+
                   {/* Card Header Bar */}
                   <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                     <div className="flex items-center gap-2">
@@ -601,6 +599,18 @@ Academic Performance: CGPA ${ed.cgpa}
                       <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                     </div>
                     <span className="text-xs font-mono text-slate-500">jaya_sanju_profile.json</span>
+                  </div>
+
+                  {/* Profile Image */}
+                  <div className="flex flex-col items-center pt-4 pb-2">
+                    <div className="relative group/image">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-full blur opacity-60 group-hover/image:opacity-100 transition duration-500 animate-pulse"></div>
+                      <img
+                        src="/profile.jpg"
+                        alt="Jaya Sanju"
+                        className="relative w-36 h-36 rounded-full object-cover border-4 border-slate-900 shadow-2xl transform group-hover/image:scale-105 transition duration-500"
+                      />
+                    </div>
                   </div>
 
                   {/* Code Snippet Styled Profile Details */}
@@ -643,7 +653,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* ABOUT ME SECTION */}
         <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Get To Know Me</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">About Me</h2>
@@ -651,7 +661,7 @@ Academic Performance: CGPA ${ed.cgpa}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
               {/* Card 1: AI & DS Focus */}
               <div className="bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300 space-y-4 group">
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
@@ -717,7 +727,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* SKILLS SECTION */}
         <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/40">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-indigo-400 font-mono text-xs tracking-widest uppercase">Technical Stack</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Skills & Technologies</h2>
@@ -726,7 +736,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {RESUME_DATA.skills.map((skillGroup, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="bg-slate-900/80 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 backdrop-blur-sm space-y-4 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5"
                 >
@@ -763,7 +773,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* WORK EXPERIENCE SECTION */}
         <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Career Journey</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</h2>
@@ -773,7 +783,7 @@ Academic Performance: CGPA ${ed.cgpa}
             <div className="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:left-6 md:before:left-1/2 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:via-indigo-500 before:to-transparent">
               {RESUME_DATA.experience.map((exp, idx) => (
                 <div key={idx} className="relative flex flex-col md:flex-row items-center group">
-                  
+
                   {/* Timeline Dot */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/30 z-10">
                     <Briefcase className="w-4 h-4" />
@@ -782,7 +792,7 @@ Academic Performance: CGPA ${ed.cgpa}
                   {/* Experience Card */}
                   <div className="ml-14 md:ml-0 md:w-1/2 md:pr-12 w-full">
                     <div className="bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 shadow-xl space-y-4">
-                      
+
                       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
                         <div>
                           <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
@@ -823,7 +833,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* PROJECTS SECTION */}
         <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/40">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-purple-400 font-mono text-xs tracking-widest uppercase">Portfolio Showcase</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Featured Project</h2>
@@ -832,7 +842,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="max-w-4xl mx-auto">
               {RESUME_DATA.projects.map((proj, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl space-y-8 hover:border-cyan-500/50 transition-all duration-300"
                 >
@@ -878,7 +888,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {proj.tags.map((tag, tIdx) => (
-                        <span 
+                        <span
                           key={tIdx}
                           className="px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-semibold"
                         >
@@ -890,7 +900,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
                   {/* Project Buttons */}
                   <div className="pt-4 flex flex-wrap gap-4">
-                    <button 
+                    <button
                       onClick={() => setSelectedProject(proj)}
                       className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-lg shadow-cyan-500/20 transition-all duration-300"
                     >
@@ -909,7 +919,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* EDUCATION SECTION */}
         <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Academic Background</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Education</h2>
@@ -918,7 +928,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="max-w-4xl mx-auto">
               {RESUME_DATA.education.map((edu, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl hover:border-indigo-500/50 transition-all duration-300 space-y-6 shadow-xl"
                 >
@@ -969,7 +979,7 @@ Academic Performance: CGPA ${ed.cgpa}
         {/* CONTACT SECTION */}
         <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/60">
           <div className="max-w-7xl mx-auto space-y-12">
-            
+
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Get In Touch</span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Contact Me</h2>
@@ -977,18 +987,18 @@ Academic Performance: CGPA ${ed.cgpa}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto">
-              
+
               {/* Left Column - Contact Details */}
               <div className="lg:col-span-5 space-y-6">
-                
+
                 <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl space-y-6">
-                  
+
                   <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-4">
                     Contact Information
                   </h3>
 
                   <div className="space-y-4">
-                    
+
                     {/* Email Card */}
                     <div className="flex items-center justify-between p-4 rounded-xl bg-slate-950 border border-slate-800 group hover:border-cyan-500/40 transition-colors">
                       <div className="flex items-center gap-3 overflow-hidden">
@@ -1002,7 +1012,7 @@ Academic Performance: CGPA ${ed.cgpa}
                           </a>
                         </div>
                       </div>
-                      <button 
+                      <button
                         onClick={() => handleCopyContact(RESUME_DATA.email)}
                         className="p-2 text-slate-400 hover:text-cyan-400 transition-colors"
                         title="Copy Email"
@@ -1024,7 +1034,7 @@ Academic Performance: CGPA ${ed.cgpa}
                           </a>
                         </div>
                       </div>
-                      <button 
+                      <button
                         onClick={() => handleCopyContact(RESUME_DATA.phone)}
                         className="p-2 text-slate-400 hover:text-emerald-400 transition-colors"
                         title="Copy Phone Number"
@@ -1077,7 +1087,7 @@ Academic Performance: CGPA ${ed.cgpa}
               {/* Right Column - Interactive Form */}
               <div className="lg:col-span-7">
                 <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl">
-                  
+
                   {formSubmitted ? (
                     <div className="py-12 text-center space-y-4">
                       <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto animate-bounce">
@@ -1182,7 +1192,7 @@ Academic Performance: CGPA ${ed.cgpa}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            
+
             <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-4 right-4 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white"
