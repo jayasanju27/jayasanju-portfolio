@@ -33,6 +33,7 @@ import SwarmCursor from './components/SwarmCursor';
 import GooeyNav from './components/GooeyNav';
 import ElectricBorder from './components/ElectricBorder';
 import SpotlightCard from './components/SpotlightCard';
+import TargetCursor from './components/TargetCursor';
 
 
 // Resume Data Constants strictly from uploaded resume
@@ -413,6 +414,16 @@ Academic Performance: CGPA ${ed.cgpa}
         glow={0.5}
         trail={0.6}
         className="fixed inset-0 pointer-events-none z-30"
+      />
+
+      {/* Target Lock Cursor Effect */}
+      <TargetCursor 
+        spinDuration={4}
+        hideDefaultCursor={true}
+        parallaxOn={true}
+        cursorColor="#22d3ee"
+        cursorColorOnTarget="#6366f1"
+        targetSelector="a, button, .cursor-target"
       />
 
       {/* Decorative Glow Elements */}
