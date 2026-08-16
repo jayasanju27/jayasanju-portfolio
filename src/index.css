@@ -2,7 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #020617; }
-* { box-sizing: border-box; }
-::selection { background: #06b6d4; color: #020617; }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #020617;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: #06b6d4;
+    color: #020617;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Section headings */
+  h1,
+  h2,
+  h3 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Skills cards */
+  .skills-card,
+  .skill-card {
+    width: calc(100% - 24px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Skill buttons/tags */
+  .skills-card button,
+  .skill-card button,
+  .skill-tag {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  /* Navigation */
+  nav {
+    max-width: 100%;
+  }
+}
