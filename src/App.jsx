@@ -29,7 +29,6 @@ import {
 } from 'lucide-react';
 import BlurText from './components/BlurText';
 import FoldText from './components/FoldText';
-import SwarmCursor from './components/SwarmCursor';
 import GooeyNav from './components/GooeyNav';
 import ElectricBorder from './components/ElectricBorder';
 import SpotlightCard from './components/SpotlightCard';
@@ -402,19 +401,7 @@ Academic Performance: CGPA ${ed.cgpa}
       {/* 3D WebGL Background Canvas */}
       <ThreeDCanvas />
 
-      {/* Global Swarm Cursor Effect */}
-      <SwarmCursor
-        color="#06b6d4"
-        accentColor="#6366f1"
-        count={30}
-        size={6}
-        speed={3.5}
-        spread={70}
-        wander={0.2}
-        glow={0.5}
-        trail={0.6}
-        className="fixed inset-0 pointer-events-none z-30"
-      />
+
 
       {/* Target Lock Cursor Effect */}
       <TargetCursor 
@@ -545,7 +532,7 @@ Academic Performance: CGPA ${ed.cgpa}
                   borderRadius={16}
                   className="w-full shadow-2xl"
                 >
-                  <div className="relative bg-slate-900/90 p-6 sm:p-8 backdrop-blur-xl space-y-6">
+                  <div className="relative bg-transparent p-6 sm:p-8 backdrop-blur-xl space-y-6">
 
                   {/* Card Header Bar */}
                   <div className="flex items-center justify-between border-b border-slate-800 pb-4">
