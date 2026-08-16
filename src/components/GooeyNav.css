@@ -178,6 +178,8 @@
 .gooey-nav-container .effect.filter {
   filter: blur(7px) contrast(30) blur(0);
   mix-blend-mode: lighten;
+  border-radius: 9999px;
+  overflow: hidden;
 }
 
 .gooey-nav-container .effect.filter::before {

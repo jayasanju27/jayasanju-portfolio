@@ -558,59 +558,68 @@ Academic Performance: CGPA ${ed.cgpa}
                   borderRadius={16}
                   className="w-full shadow-2xl"
                 >
-                  <div className="relative bg-transparent p-6 sm:p-8 backdrop-blur-xl space-y-6">
+                  <div className="relative bg-slate-950/85 p-6 backdrop-blur-xl space-y-6 rounded-2xl border border-slate-800/40">
 
-                  {/* Card Header Bar */}
-                  <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    {/* Card Header Bar */}
+                    <div className="flex items-center justify-between border-b border-slate-800/60 pb-3">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500/70"></div>
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">profile.js</span>
+                      <div className="w-12"></div> {/* spacer */}
                     </div>
-                    <span className="text-xs font-mono text-slate-500">jaya_sanju_profile.json</span>
-                  </div>
 
-                  {/* Profile Image */}
-                  <div className="flex flex-col items-center pt-4 pb-2">
-                    <div className="relative group/image">
-                      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-full blur opacity-60 group-hover/image:opacity-100 transition duration-500 animate-pulse"></div>
-                      <img
-                        src="/profile.jpg"
-                        alt="Jaya Sanju"
-                        className="relative w-36 h-36 rounded-full object-cover border-4 border-slate-900 shadow-2xl transform group-hover/image:scale-105 transition duration-500"
-                      />
+                    {/* Split layout inside card */}
+                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+                      
+                      {/* Avatar Side */}
+                      <div className="sm:col-span-5 flex flex-col items-center justify-center">
+                        <div className="relative group/avatar">
+                          <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-2xl blur opacity-75 group-hover/avatar:opacity-100 transition duration-500 animate-pulse"></div>
+                          <img
+                            src="/profile.jpg"
+                            alt="Jaya Sanju"
+                            className="relative w-28 h-28 rounded-xl object-cover border-2 border-slate-900 shadow-2xl transform group-hover/avatar:scale-105 transition duration-500"
+                          />
+                        </div>
+                        <span className="mt-3 text-[10px] font-mono text-cyan-400 bg-cyan-950/30 px-2.5 py-0.5 rounded border border-cyan-800/30">
+                          ONLINE
+                        </span>
+                      </div>
+
+                      {/* Code Info Side */}
+                      <div className="sm:col-span-7 font-mono text-[10px] sm:text-xs text-slate-300 space-y-1 bg-slate-950/60 p-4 rounded-xl border border-slate-900/60 relative overflow-hidden">
+                        <div className="absolute top-1 right-2 text-[9px] text-slate-600 uppercase font-bold">JSON</div>
+                        <p><span className="text-purple-400">const</span> <span className="text-cyan-400">dev</span> = &#123;</p>
+                        <p className="pl-3"><span className="text-amber-400">name</span>: <span className="text-emerald-400">"Jaya Sanju"</span>,</p>
+                        <p className="pl-3"><span className="text-amber-400">role</span>: <span className="text-emerald-400">"AI Student"</span>,</p>
+                        <p className="pl-3"><span className="text-amber-400">colg</span>: <span className="text-slate-400">"Anna Univ"</span>,</p>
+                        <p className="pl-3"><span className="text-amber-400">code</span>: [<span className="text-purple-300">"Python"</span>, <span className="text-purple-300">"React"</span>],</p>
+                        <p className="pl-3"><span className="text-amber-400">status</span>: <span className="text-indigo-400">"Open"</span></p>
+                        <p>&#125;;</p>
+                      </div>
+
                     </div>
-                  </div>
 
-                  {/* Code Snippet Styled Profile Details */}
-                  <div className="font-mono text-xs sm:text-sm space-y-2 text-slate-300">
-                    <p><span className="text-purple-400">const</span> <span className="text-yellow-300">developer</span> = &#123;</p>
-                    <p className="pl-4"><span className="text-cyan-400">name</span>: <span className="text-emerald-300">"{RESUME_DATA.name}"</span>,</p>
-                    <p className="pl-4"><span className="text-cyan-400">degree</span>: <span className="text-emerald-300">"B.Tech AI & DS"</span>,</p>
-                    <p className="pl-4"><span className="text-cyan-400">college</span>: <span className="text-emerald-300">"Info Institute of Engineering"</span>,</p>
-                    <p className="pl-4"><span className="text-cyan-400">location</span>: <span className="text-emerald-300">"Coimbatore - 641107"</span>,</p>
-                    <p className="pl-4"><span className="text-cyan-400">coreTech</span>: [<span className="text-amber-300">"Python"</span>, <span className="text-amber-300">"React.js"</span>, <span className="text-amber-300">"Tailwind"</span>, <span className="text-amber-300">"Supabase"</span>],</p>
-                    <p className="pl-4"><span className="text-cyan-400">status</span>: <span className="text-indigo-400">"Actively Coding"</span></p>
-                    <p>&#125;;</p>
-                  </div>
-
-                  {/* Interactive Quick Links */}
-                  <div className="pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-3">
-                    <a
-                      href={`mailto:${RESUME_DATA.email}`}
-                      className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-cyan-400 border border-slate-700/50 transition-colors"
-                    >
-                      <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
-                      <span className="truncate">{RESUME_DATA.email}</span>
-                    </a>
-                    <a
-                      href={`tel:${RESUME_DATA.phone}`}
-                      className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-cyan-400 border border-slate-700/50 transition-colors"
-                    >
-                      <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <span>{RESUME_DATA.phone}</span>
-                    </a>
-                  </div>
+                    {/* Interactive Contact Actions */}
+                    <div className="pt-2 border-t border-slate-800/60 grid grid-cols-2 gap-3">
+                      <a
+                        href={`mailto:${RESUME_DATA.email}`}
+                        className="flex items-center justify-center gap-2 p-2.5 rounded-lg bg-slate-900/60 hover:bg-cyan-500/10 text-xs text-slate-300 hover:text-cyan-400 border border-slate-800/80 transition-all duration-300 shadow-inner"
+                      >
+                        <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                        <span className="truncate">Email Me</span>
+                      </a>
+                      <a
+                        href={`tel:${RESUME_DATA.phone}`}
+                        className="flex items-center justify-center gap-2 p-2.5 rounded-lg bg-slate-900/60 hover:bg-emerald-500/10 text-xs text-slate-300 hover:text-emerald-400 border border-slate-800/80 transition-all duration-300 shadow-inner"
+                      >
+                        <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>Call Me</span>
+                      </a>
+                    </div>
 
                 </div>
               </ElectricBorder>
