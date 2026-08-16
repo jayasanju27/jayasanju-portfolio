@@ -30,8 +30,8 @@ import {
 import BlurText from './components/BlurText';
 import FoldText from './components/FoldText';
 import SwarmCursor from './components/SwarmCursor';
-import MagicBento from './components/MagicBento';
-import PillNav from './components/PillNav';
+import GooeyNav from './components/GooeyNav';
+import ElectricBorder from './components/ElectricBorder';
 import SpotlightCard from './components/SpotlightCard';
 
 
@@ -420,19 +420,19 @@ Academic Performance: CGPA ${ed.cgpa}
       <div className="fixed bottom-1/4 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Navigation Bar */}
-      <PillNav
-        logo=""
-        logoAlt="JS Logo"
+      <GooeyNav
         items={navLinks.map(link => ({
           label: link.label,
           href: `#${link.id}`
         }))}
         activeHref={`#${activeSection}`}
-        baseColor="#0f172a"
-        pillColor="#1e293b"
-        pillTextColor="#94a3b8"
-        hoveredPillTextColor="#22d3ee"
-        className="shadow-2xl"
+        particleCount={15}
+        particleDistances={[90, 10]}
+        particleR={100}
+        initialActiveIndex={0}
+        animationTime={600}
+        timeVariance={300}
+        colors={[1, 2, 3, 1, 2, 3, 1, 4]}
       />
 
       <main className="relative z-10 pt-20">
@@ -527,11 +527,14 @@ Academic Performance: CGPA ${ed.cgpa}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group w-full max-w-md">
 
-                {/* Glowing Backlight */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-
-                {/* Main Glassmorphic Interactive Card */}
-                <div className="relative bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl space-y-6">
+                <ElectricBorder
+                  color="#22d3ee"
+                  speed={0.8}
+                  chaos={0.08}
+                  borderRadius={16}
+                  className="w-full shadow-2xl"
+                >
+                  <div className="relative bg-slate-900/90 p-6 sm:p-8 backdrop-blur-xl space-y-6">
 
                   {/* Card Header Bar */}
                   <div className="flex items-center justify-between border-b border-slate-800 pb-4">
@@ -586,6 +589,7 @@ Academic Performance: CGPA ${ed.cgpa}
                   </div>
 
                 </div>
+              </ElectricBorder>
               </div>
             </div>
 
@@ -613,19 +617,65 @@ Academic Performance: CGPA ${ed.cgpa}
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
-            <div className="max-w-5xl mx-auto">
-              <MagicBento 
-                textAutoHide={false}
-                enableStars={true}
-                enableSpotlight={true}
-                enableBorderGlow={true}
-                enableTilt={true}
-                enableMagnetism={true}
-                clickEffect={true}
-                spotlightRadius={250}
-                particleCount={10}
-                glowColor="34, 211, 238"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+              {/* Card 1: AI & DS Focus */}
+              <div className="bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300 space-y-4 group">
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  AI & Data Science Student
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Currently pursuing B.Tech in Artificial Intelligence and Data Science (2024–2028) at Info Institute of Engineering, affiliated with Anna University. Maintaining a cumulative CGPA of ~7.0.
+                </p>
+              </div>
+
+              {/* Card 2: Full Stack & Responsive Web */}
+              <div className="bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300 space-y-4 group">
+                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
+                  <Code className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                  Web Engineering
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Hands-on experience building modern responsive websites, single-page web applications using React.js, Tailwind CSS, Supabase backend databases, and modern deployment tools like Vercel.
+                </p>
+              </div>
+
+              {/* Card 3: Hands-on Industry Experience */}
+              <div className="bg-slate-900/60 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-6 backdrop-blur-sm hover:-translate-y-1 transition-all duration-300 space-y-4 group">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+                  <Briefcase className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                  Industry Internship
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Completed web development internship at IT Nanbragal, enhancing full-stack capabilities, web UI standard practices, and production web project workflows.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Language Proficiency Bar */}
+            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto space-y-4">
+              <h4 className="text-lg font-bold text-white flex items-center gap-2">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                Languages Known
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 flex items-center justify-between">
+                  <span className="font-semibold text-slate-200">English</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-400 font-mono">Fluent</span>
+                </div>
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/80 flex items-center justify-between">
+                  <span className="font-semibold text-slate-200">Tamil</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-400 font-mono">Native</span>
+                </div>
+              </div>
             </div>
 
           </div>
