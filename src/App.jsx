@@ -28,6 +28,8 @@ import {
   Eye
 } from 'lucide-react';
 import BlurText from './components/BlurText';
+import FoldText from './components/FoldText';
+import SwarmCursor from './components/SwarmCursor';
 
 
 // Resume Data Constants strictly from uploaded resume
@@ -396,6 +398,20 @@ Academic Performance: CGPA ${ed.cgpa}
       {/* 3D WebGL Background Canvas */}
       <ThreeDCanvas />
 
+      {/* Global Swarm Cursor Effect */}
+      <SwarmCursor
+        color="#06b6d4"
+        accentColor="#6366f1"
+        count={30}
+        size={6}
+        speed={3.5}
+        spread={70}
+        wander={0.2}
+        glow={0.5}
+        trail={0.6}
+        className="fixed inset-0 pointer-events-none z-30"
+      />
+
       {/* Decorative Glow Elements */}
       <div className="fixed top-1/4 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="fixed bottom-1/4 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
@@ -671,7 +687,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Get To Know Me</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">About Me</h2>
+              <FoldText
+                text="About Me"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.045}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
@@ -745,7 +772,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-indigo-400 font-mono text-xs tracking-widest uppercase">Technical Stack</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Skills & Technologies</h2>
+              <FoldText
+                text="Skills & Technologies"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.03}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
@@ -791,7 +829,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Career Journey</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</h2>
+              <FoldText
+                text="Work Experience"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.035}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
@@ -851,7 +900,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-purple-400 font-mono text-xs tracking-widest uppercase">Portfolio Showcase</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Featured Project</h2>
+              <FoldText
+                text="Featured Project"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.035}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
@@ -937,7 +997,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Academic Background</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Education</h2>
+              <FoldText
+                text="Education"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.045}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
@@ -997,7 +1068,18 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="text-center space-y-3">
               <span className="text-cyan-400 font-mono text-xs tracking-widest uppercase">Get In Touch</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Contact Me</h2>
+              <FoldText
+                text="Contact Me"
+                splitBy="char"
+                hinge="bottom"
+                trigger="scroll"
+                duration={0.7}
+                stagger={0.04}
+                fontSize="inherit"
+                fontWeight="inherit"
+                color="inherit"
+                className="text-3xl sm:text-4xl font-extrabold text-white"
+              />
               <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-600 mx-auto rounded-full"></div>
             </div>
 
