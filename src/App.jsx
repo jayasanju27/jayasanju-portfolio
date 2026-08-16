@@ -31,6 +31,8 @@ import BlurText from './components/BlurText';
 import FoldText from './components/FoldText';
 import SwarmCursor from './components/SwarmCursor';
 import MagicBento from './components/MagicBento';
+import PillNav from './components/PillNav';
+import SpotlightCard from './components/SpotlightCard';
 
 
 // Resume Data Constants strictly from uploaded resume
@@ -418,112 +420,20 @@ Academic Performance: CGPA ${ed.cgpa}
       <div className="fixed bottom-1/4 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Navigation Bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/70 border-b border-slate-800/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-
-          {/* Logo */}
-          <a
-            href="#hero"
-            className="flex items-center gap-2 group cursor-pointer"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
-              JS
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg tracking-wider text-white group-hover:text-cyan-400 transition-colors">
-                JAYA SANJU
-              </span>
-              <span className="text-[10px] tracking-widest text-slate-400 uppercase">
-                AI & DS Engineer
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                onClick={() => setActiveSection(link.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${activeSection === link.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md shadow-cyan-500/25'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
-                  }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              onClick={handleDownloadResume}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 hover:border-cyan-500 text-slate-200 text-xs font-semibold hover:text-cyan-400 transition-all duration-300 shadow-sm"
-            >
-              <Download className="w-4 h-4" />
-              Resume
-            </button>
-            <a
-              href="#contact"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-semibold shadow-lg shadow-cyan-500/20 transition-all duration-300"
-            >
-              Contact Me
-            </a>
-          </div>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                onClick={() => {
-                  setActiveSection(link.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`block px-4 py-3 rounded-xl text-sm font-medium ${activeSection === link.id
-                    ? 'bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 text-cyan-400 border border-cyan-500/30'
-                    : 'text-slate-300 hover:bg-slate-900'
-                  }`}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="pt-4 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  handleDownloadResume();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 text-sm font-semibold"
-              >
-                <Download className="w-4 h-4" />
-                Download Resume
-              </button>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white text-sm font-semibold shadow-lg shadow-cyan-500/20"
-              >
-                Contact Me
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
+      <PillNav
+        logo=""
+        logoAlt="JS Logo"
+        items={navLinks.map(link => ({
+          label: link.label,
+          href: `#${link.id}`
+        }))}
+        activeHref={`#${activeSection}`}
+        baseColor="#0f172a"
+        pillColor="#1e293b"
+        pillTextColor="#94a3b8"
+        hoveredPillTextColor="#22d3ee"
+        className="shadow-2xl"
+      />
 
       <main className="relative z-10 pt-20">
         {/* HERO SECTION */}
@@ -872,9 +782,10 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="max-w-4xl mx-auto">
               {RESUME_DATA.projects.map((proj, idx) => (
-                <div
+                <SpotlightCard
                   key={idx}
-                  className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl space-y-8 hover:border-cyan-500/50 transition-all duration-300"
+                  spotlightColor="rgba(34, 211, 238, 0.15)"
+                  className="p-6 sm:p-10 backdrop-blur-xl shadow-2xl space-y-8 hover:border-cyan-500/50 transition-all duration-300"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
                     <div className="space-y-1">
@@ -939,7 +850,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </button>
                   </div>
 
-                </div>
+                </SpotlightCard>
               ))}
             </div>
 
@@ -969,9 +880,10 @@ Academic Performance: CGPA ${ed.cgpa}
 
             <div className="max-w-4xl mx-auto">
               {RESUME_DATA.education.map((edu, idx) => (
-                <div
+                <SpotlightCard
                   key={idx}
-                  className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl hover:border-indigo-500/50 transition-all duration-300 space-y-6 shadow-xl"
+                  spotlightColor="rgba(99, 102, 241, 0.15)"
+                  className="p-6 sm:p-8 backdrop-blur-xl hover:border-indigo-500/50 transition-all duration-300 space-y-6 shadow-xl"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-800 pb-4">
                     <div className="space-y-1">
@@ -1010,7 +922,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </ul>
                   </div>
 
-                </div>
+                </SpotlightCard>
               ))}
             </div>
 
@@ -1043,7 +955,7 @@ Academic Performance: CGPA ${ed.cgpa}
               {/* Left Column - Contact Details */}
               <div className="lg:col-span-5 space-y-6">
 
-                <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl space-y-6">
+                <SpotlightCard spotlightColor="rgba(34, 211, 238, 0.15)" className="p-6 sm:p-8 backdrop-blur-xl space-y-6">
 
                   <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-4">
                     Contact Information
@@ -1132,7 +1044,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </a>
                   </div>
 
-                </div>
+                </SpotlightCard>
 
               </div>
 
