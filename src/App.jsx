@@ -32,7 +32,7 @@ import FoldText from './components/FoldText';
 import GooeyNav from './components/GooeyNav';
 import ElectricBorder from './components/ElectricBorder';
 import SpotlightCard from './components/SpotlightCard';
-import TargetCursor from './components/TargetCursor';
+import StarBorder from './components/StarBorder';
 
 
 // Resume Data Constants strictly from uploaded resume
@@ -403,15 +403,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
 
 
-      {/* Target Lock Cursor Effect */}
-      <TargetCursor 
-        spinDuration={4}
-        hideDefaultCursor={true}
-        parallaxOn={true}
-        cursorColor="#22d3ee"
-        cursorColorOnTarget="#6366f1"
-        targetSelector="a, button, .cursor-target"
-      />
+
 
       {/* Decorative Glow Elements */}
       <div className="fixed top-1/4 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
@@ -487,13 +479,16 @@ Academic Performance: CGPA ${ed.cgpa}
                   View Projects
                 </a>
 
-                <a
+                <StarBorder
+                  as="a"
                   href="#contact"
-                  className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300"
+                  color="#22d3ee"
+                  speed="5s"
+                  className="rounded-xl overflow-hidden shadow-lg"
                 >
                   <Send className="w-5 h-5 text-cyan-400" />
                   Get in Touch
-                </a>
+                </StarBorder>
 
                 <button
                   onClick={handleDownloadResume}
