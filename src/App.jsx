@@ -1,32 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-  Download,
-  ExternalLink,
-  Code,
-  Database,
-  Terminal,
-  Cpu,
-  Briefcase,
-  GraduationCap,
-  User,
-  Send,
-  Sparkles,
-  ChevronRight,
-  Menu,
-  X,
-  CheckCircle2,
-  Award,
-  Globe,
-  Layers,
-  Copy,
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Download, 
+  ExternalLink, 
+  Code, 
+  Database, 
+  Terminal, 
+  Cpu, 
+  Briefcase, 
+  GraduationCap, 
+  User, 
+  Send, 
+  Sparkles, 
+  ChevronRight, 
+  Menu, 
+  X, 
+  CheckCircle2, 
+  Award, 
+  Globe, 
+  Layers, 
+  Copy, 
   Smartphone,
   Eye
 } from 'lucide-react';
+import BlurText from './components/BlurText';
+
 
 // Resume Data Constants strictly from uploaded resume
 const RESUME_DATA = {
@@ -519,12 +521,24 @@ Academic Performance: CGPA ${ed.cgpa}
               </div>
 
               <div className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
-                  Hi, I'm <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-500">
-                    {RESUME_DATA.name}
-                  </span>
-                </h1>
+                <div className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
+                  <BlurText
+                    text="Hi, I'm"
+                    delay={100}
+                    animateBy="words"
+                    direction="top"
+                    as="h1"
+                    className="text-white mb-2"
+                  />
+                  <BlurText
+                    text={RESUME_DATA.name}
+                    delay={80}
+                    animateBy="letters"
+                    direction="bottom"
+                    as="span"
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-500 leading-normal py-1"
+                  />
+                </div>
 
                 <div className="h-10 text-xl sm:text-2xl font-medium text-slate-300 flex items-center justify-center lg:justify-start gap-2">
                   <span className="text-cyan-400 font-mono">&gt;</span>
