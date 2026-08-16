@@ -15,6 +15,7 @@ const BlurText = ({
   text = '',
   delay = 200,
   className = '',
+  childClassName = '',
   animateBy = 'words',
   direction = 'top',
   threshold = 0.1,
@@ -31,18 +32,27 @@ const BlurText = ({
   const ref = useRef(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    // Fallback: trigger animation after 100ms in case IntersectionObserver doesn't fire due to layout timing
+    const timer = setTimeout(() => {
+      setInView(true);
+    }, 100);
+
+    if (!ref.current) return () => clearTimeout(timer);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
           observer.unobserve(ref.current);
+          clearTimeout(timer);
         }
       },
       { threshold, rootMargin }
     );
     observer.observe(ref.current);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, [threshold, rootMargin]);
 
   const defaultFrom = useMemo(
@@ -84,7 +94,7 @@ const BlurText = ({
 
         return (
           <motion.span
-            className="inline-block will-change-[transform,filter,opacity]"
+            className={`inline-block will-change-[transform,filter,opacity] ${childClassName}`}
             key={index}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}

@@ -532,11 +532,12 @@ Academic Performance: CGPA ${ed.cgpa}
                   />
                   <BlurText
                     text={RESUME_DATA.name}
-                    delay={80}
-                    animateBy="letters"
+                    delay={150}
+                    animateBy="words"
                     direction="bottom"
-                    as="span"
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-500 leading-normal py-1"
+                    as="div"
+                    className="leading-normal py-1"
+                    childClassName="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-500"
                   />
                 </div>
 
