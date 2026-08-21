@@ -16,6 +16,17 @@ body {
     box-sizing: border-box;
 }
 
+img,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a {
+  max-width: 100%;
+}
+
 ::selection {
     background: #06b6d4;
     color: #020617;
@@ -74,5 +85,15 @@ body,
   /* Navigation */
   nav {
     max-width: 100%;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  span {
+    overflow-wrap: anywhere;
   }
 }

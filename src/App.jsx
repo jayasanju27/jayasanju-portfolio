@@ -459,13 +459,13 @@ Academic Performance: CGPA ${ed.cgpa}
       <main className="relative z-10 pt-20">
         {/* HERO SECTION */}
         <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-w-0">
 
             {/* Left Column - Hero Content */}
-            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wide">
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left min-w-0">
+              <div className="inline-flex max-w-full items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wide">
                 <Sparkles className="w-4 h-4 animate-pulse" />
-                <span>Available for Opportunities & Projects</span>
+                <span className="break-words">Available for Opportunities & Projects</span>
               </div>
 
               <div className="space-y-3">
@@ -489,9 +489,9 @@ Academic Performance: CGPA ${ed.cgpa}
                   />
                 </div>
 
-                <div className="h-10 text-xl sm:text-2xl font-medium text-slate-300 flex items-center justify-center lg:justify-start gap-2">
+                <div className="min-h-10 text-lg sm:text-2xl font-medium text-slate-300 flex items-center justify-center lg:justify-start gap-2 min-w-0">
                   <span className="text-cyan-400 font-mono">&gt;</span>
-                  <span>{typedText}</span>
+                  <span className="min-w-0 max-w-full break-words">{typedText}</span>
                   <span className="w-2 h-6 bg-cyan-400 animate-pulse inline-block"></span>
                 </div>
               </div>
@@ -501,10 +501,10 @@ Academic Performance: CGPA ${ed.cgpa}
               </p>
 
               {/* Action CTA Buttons */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 max-sm:flex-col max-sm:items-stretch">
                 <a
                   href="#projects"
-                  className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-300"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <Eye className="w-5 h-5" />
                   View Projects
@@ -523,7 +523,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
                 <button
                   onClick={handleDownloadResume}
-                  className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 text-sm font-semibold transition-all duration-300"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 text-sm font-semibold transition-all duration-300"
                 >
                   <Download className="w-4 h-4" />
                   Resume
@@ -549,7 +549,7 @@ Academic Performance: CGPA ${ed.cgpa}
 
             {/* Right Column - Interactive Futuristic 3D Developer Card */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative group w-full max-w-md">
+              <div className="relative group w-full max-w-md min-w-0">
 
                 <ElectricBorder
                   color="#22d3ee"
@@ -558,7 +558,7 @@ Academic Performance: CGPA ${ed.cgpa}
                   borderRadius={16}
                   className="w-full shadow-2xl"
                 >
-                  <div className="relative bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-xl space-y-6">
+                  <div className="relative bg-slate-900/60 border border-slate-800 rounded-2xl p-4 sm:p-8 backdrop-blur-xl space-y-6 min-w-0">
 
                     {/* Card Header Bar */}
                     <div className="flex items-center justify-between border-b border-slate-800 pb-4">
@@ -567,7 +567,7 @@ Academic Performance: CGPA ${ed.cgpa}
                         <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                       </div>
-                      <span className="text-xs font-mono text-slate-500">jaya_sanju_profile.json</span>
+                      <span className="max-w-[65%] truncate text-xs font-mono text-slate-500">jaya_sanju_profile.json</span>
                     </div>
 
                     {/* Profile Image */}
@@ -595,7 +595,7 @@ Academic Performance: CGPA ${ed.cgpa}
                     </div>
 
                     {/* Interactive Quick Links */}
-                    <div className="pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-3">
+                    <div className="pt-4 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <a
                         href={`mailto:${RESUME_DATA.email}`}
                         className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-800/60 hover:bg-slate-800 text-xs text-slate-300 hover:text-cyan-400 border border-slate-700/50 transition-colors"
